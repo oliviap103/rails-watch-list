@@ -2,11 +2,13 @@
   <div class="container">
     <h1><%= @list.name %></h1>
     <%= link_to "Add a movie", new_list_bookmark_path(@list), class:'btn btn-flat text-decoration-none'%>
+    <%= link_to "Back To All Lists", lists_path, class:'btn btn-flat text-decoration-none'%>
   </div>
 </div>
 
 <% @list.bookmarks.each do |bm| %>
     <div class="card-product">
+      <%= image_tag "#{bm.movie.poster_url}" %>
       <div class="card-product-infos">
         <h2><%= bm.movie.title %></h2>
         <p><%= bm.movie.overview %></p>
