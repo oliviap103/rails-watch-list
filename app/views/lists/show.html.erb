@@ -1,10 +1,11 @@
-<h1 class="d-flex justify-content-center m-3 fs.1"><%= @list.name %></h1>
-<h3 class="d-flex justify-content-center m-3 fs-3"><%= link_to "Back to All Lists", lists_path %></h3>
-<h3 class="d-flex justify-content-center m-3 fs-3"><%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %></h3>
+<h1><%= @list.name %></h1>
 
-<ul class="d-flex justify-content-center list-unstyled">
-  <% @list.bookmarks.each do |bookmark| %>
-    <%= bookmark.comment %>
-    <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
-</ul>
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+<% @list.bookmarks.each do |bm| %>
+    <div class="card">
+        <h2><%= bm.movie.title %></h2>
+        <p><%= bm.movie.overview %></p>
+        <p><%= bm.comment %></p>
+        <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bm), data: {turbo_method: :delete} %>
+    </div>
+<% end %>

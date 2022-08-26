@@ -1,10 +1,12 @@
 
-<h1 class="d-flex justify-content-center m-3 fs.1">Movie Lists</h1>
+  <h1 class="d-flex justify-content-center m-3 fs.1">Watch Lists</h1>
 
-<h3 class="d-flex justify-content-center m-3 fs-3"><%= link_to "Create A New List", new_list_path %></h3>
+  <h3><%= link_to "Create A New List", new_list_path %></h3>
 
-<ul class="d-flex justify-content-center list-unstyled">
-  <% @lists.each do |l| %>
-    <li class="card m-5 p-5 shadow-sm fs-4 rounded"><%= link_to "#{l.name}", list_path(l)%></li>
-  <% end %>
-</ul>
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+        <div class="card">
+            <%= list.name %>
+        </div>
+    <% end %>
+<% end %>
