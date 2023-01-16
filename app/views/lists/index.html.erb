@@ -7,12 +7,12 @@
     <div class="card-container">
       <div class="cards">
         <% @lists.each do |list| %>
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8" />
-            <%= link_to list_path(list), class:'btn-list text-decoration-none' do%>
+          <%= link_to list_path(list), class:'btn-list text-decoration-none' do%>
+            <div class="card">
+              <img src="https://w7.pngwing.com/pngs/545/554/png-transparent-computer-icons-film-movie-projector-action-movie-angle-text-rectangle.png"/>
               <h2><%= list.name %></h2>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
