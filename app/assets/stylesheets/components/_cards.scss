@@ -1,5 +1,4 @@
 .cards {
-  padding-top: 60px;
   display: flex;
   justify-content: space-around;
 }
@@ -8,7 +7,7 @@
   text-align: center;
   padding-left: 100px;
   padding-right: 100px;
-  height: 425px;
+  margin-top: 250px;
 }
 
 .card {
@@ -21,6 +20,7 @@
   width: 300px;
   text-align: center;
   font-size: smaller;
+  z-index: -1;
 }
 
 .card img{
