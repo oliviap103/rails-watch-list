@@ -1,16 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
-  <div class="container">
-    <h1>Watch Lists</h1>
-    <%= link_to "Create A New List", new_list_path, class:'btn btn-flat text-decoration-none'%>
-  </div>
-</div>
-<% @lists.each do |list| %>
-  <div class="card-product">
-    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80" />
-    <div class="card-product-infos">
-      <%= link_to list_path(list), class:'text-decoration-none' do%>
-        <h2><%= list.name %></h2>
-      <% end %>
+<div class="container">
+    <div class="banner">
+      <div class="banner-container">
+        <h1>Watch Lists</h1>
+        <%= link_to "Add List", new_list_path, class:'btn btn-flat text-decoration-none'%>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="cards">
+        <% @lists.each do |list| %>
+          <div class="card card-apply">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80" />
+            <%= link_to list_path(list), class:'text-decoration-none' do%>
+              <h2><%= list.name %></h2>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="footer">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <p>This website was coded with 💚 by Olivia Patterson</p>
     </div>
   </div>
-<% end %>
