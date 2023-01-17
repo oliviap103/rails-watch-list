@@ -5,13 +5,15 @@
 </div>
 
 <div class="card-container">
-  <div class="cards">
+  <div class="bm-cards">
     <% @list.bookmarks.each do |bm| %>
         <div class="bm-card">
           <%= image_tag "#{bm.movie.poster_url}"%>
-          <h2><%= bm.movie.title %></h2>
-          <p><%= bm.movie.overview %></p>
-          <p><em><%= bm.comment %></em></p>
+          <div>
+            <h2><%= bm.movie.title %></h2>
+            <p><%= bm.movie.overview %></p>
+            <p><em><%= bm.comment %></em></p>
+          </div>
           <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bm), data: {turbo_method: :delete} %>
         </div>
     <% end %>

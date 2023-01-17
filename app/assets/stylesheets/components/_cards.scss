@@ -28,3 +28,27 @@
   width: 150px;
   margin-left: 75px;
 }
+
+.bm-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  border: none;
+  width: fit-content;
+  text-align: center;
+  font-size: smaller;
+  z-index: -1;
+}
+
+.bm-card img {
+  height: 150px;
+  width: 150px;
+}
+
+.bm-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: -100px;
+}
