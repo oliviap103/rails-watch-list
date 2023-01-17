@@ -31,19 +31,22 @@
 
 .bm-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: fit-content;
+  justify-content: space-between;
   border: none;
-  width: fit-content;
   text-align: center;
   font-size: smaller;
   z-index: -1;
+  margin-bottom: 20px;
 }
 
 .bm-card img {
   height: 150px;
   width: 150px;
+}
+
+.bm-info {
+  width: fit-content;
 }
 
 .bm-cards {

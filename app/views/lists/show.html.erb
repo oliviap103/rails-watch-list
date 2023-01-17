@@ -9,7 +9,7 @@
     <% @list.bookmarks.each do |bm| %>
         <div class="bm-card">
           <%= image_tag "#{bm.movie.poster_url}"%>
-          <div>
+          <div class="bm-info">
             <h2><%= bm.movie.title %></h2>
             <p><%= bm.movie.overview %></p>
             <p><em><%= bm.comment %></em></p>
