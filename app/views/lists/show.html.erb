@@ -1,19 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
-  <div class="container">
+<div class="banner">
     <h1><%= @list.name %></h1>
-    <%= link_to "Add a movie", new_list_bookmark_path(@list), class:'btn btn-flat text-decoration-none'%>
-    <%= link_to "Back To All Lists", lists_path, class:'btn btn-flat text-decoration-none'%>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class:'btn-w'%>
+    <%= link_to "Back To All Lists", lists_path, class:'btn-w'%>
+</div>
+
+<div class="card-container">
+  <div class="cards">
+    <% @list.bookmarks.each do |bm| %>
+        <div class="bm-card">
+          <%= image_tag "#{bm.movie.poster_url}"%>
+          <h2><%= bm.movie.title %></h2>
+          <p><%= bm.movie.overview %></p>
+          <p><em><%= bm.comment %></em></p>
+          <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bm), data: {turbo_method: :delete} %>
+        </div>
+    <% end %>
   </div>
 </div>
 
-<% @list.bookmarks.each do |bm| %>
-    <div class="card-product">
-      <%= image_tag "#{bm.movie.poster_url}" %>
-      <div class="card-product-infos">
-        <h2><%= bm.movie.title %></h2>
-        <p><%= bm.movie.overview %></p>
-        <p><em><%= bm.comment %></em></p>
-        <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bm), data: {turbo_method: :delete} %>
-      </div>
-    </div>
-<% end %>
+<div class="footer">
+  <a href="https://github.com/oliviap103"><i class="fa-brands fa-github"></i></a>
+  <p>This website was coded with 💛 by Olivia Patterson</p>
+</div>

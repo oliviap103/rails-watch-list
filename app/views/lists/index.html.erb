@@ -1,7 +1,8 @@
     <div class="banner">
       <h1>Movie Lists</h1>
-      <%= link_to "Add List", new_list_path, class:'btn-green'%>
+      <%= link_to "Add List", new_list_path, class:'btn-w'%>
     </div>
+
     <div class="card-container">
       <div class="cards">
         <% @lists.each do |list| %>
@@ -15,6 +16,7 @@
         <% end %>
       </div>
     </div>
+
     <div class="footer">
       <a href="https://github.com/oliviap103"><i class="fa-brands fa-github"></i></a>
       <p>This website was coded with 💛 by Olivia Patterson</p>
