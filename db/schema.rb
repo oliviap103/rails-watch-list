@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_101908) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.text "comment"
+    t.string "stars"
     t.bigint "movie_id", null: false
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false

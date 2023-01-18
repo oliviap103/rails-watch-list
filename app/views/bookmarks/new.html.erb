@@ -7,6 +7,7 @@
       <div class="form-inputs">
         <%= f.association :movie, as: :select %>
         <%= f.input :comment %>
+        <%= f.input :stars, label: "Rate this movie from 1-5" %>
       </div>
       <div class="form-actions">
         <%= f.submit class:"btn" %>
