@@ -10,11 +10,14 @@ movie['results'].each do |m|
   Movie.create(
     title: m['title'],
     overview: m['overview'],
-    poster_url: "https://image.tmdb.org/t/p/w500#{m['poster_path']}",
-    # rating: m['vote_average']
+    poster_url: "https://image.tmdb.org/t/p/w500#{m['poster_path']}"
   )
 end
 
 List.create(
   name: 'Comedy'
+)
+
+List.create(
+  name: 'Horror'
 )

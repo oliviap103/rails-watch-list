@@ -1,7 +1,8 @@
 <div class="banner">
     <h1><%= @list.name %></h1>
-    <%= link_to "Add a movie", new_list_bookmark_path(@list), class:'btn-w'%>
+    <%= link_to "Add A Movie", new_list_bookmark_path(@list), class:'btn-w'%>
     <%= link_to "Back To All Lists", lists_path, class:'btn-w'%>
+    <%= link_to "Delete This List", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }, class: "btn-w" %>
 </div>
 
 <div class="card-container">
@@ -19,7 +20,8 @@
               <% end %>
            </p>
         </div>
-        <%= link_to "delete", bookmark_path(bm), method: :delete %>
+        <i class='fa-solid fa-trash'></i>
+        <%= link_to "delete", bookmark_path(bm), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this movie?" } %>
       </div>
     <% end %>
   </div>
