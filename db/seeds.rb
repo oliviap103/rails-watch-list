@@ -15,9 +15,5 @@ movie['results'].each do |m|
 end
 
 List.create(
-  name: 'Comedy'
-)
-
-List.create(
   name: 'Horror'
 )
